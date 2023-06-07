@@ -9,12 +9,16 @@ class Sensor{
         this.readings=[];
     }
 
-    update(roadBorders, traffic){
+    update(roadBorders,traffic){
         this.#castRays();
         this.readings=[];
         for(let i=0;i<this.rays.length;i++){
             this.readings.push(
-                this.#getReading(this.rays[i],roadBorders,traffic)
+                this.#getReading(
+                    this.rays[i],
+                    roadBorders,
+                    traffic
+                )
             );
         }
     }
